@@ -3,7 +3,7 @@ import { Modal, Pressable, Text, View } from 'react-native';
 import { numbers } from '../../assets';
 import Input from '../input';
 import styles from './assets/styles';
-import { useSwipe } from './lib/useSwipe';
+import { useSwipe } from './comp/useSwipe';
 import type { BottomSheetProps } from './assets/types';
 import Button from '../button';
 
