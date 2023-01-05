@@ -1,13 +1,63 @@
 import * as React from 'react';
-
 import { StyleSheet, View } from 'react-native';
-import { DolphinUiView } from 'react-native-dolphin-ui';
+import {
+  Button,
+  Container,
+  Input,
+  Loading,
+  Panel,
+  Select,
+  BottomSheet,
+} from 'react-native-dolphin-ui';
+import type { SelectOptionsType } from 'src/components/select/assets/types';
+
+const options: SelectOptionsType[] = [
+  { label: 'Galatasaray', value: '1905' },
+  { label: 'Karşıyaka', value: '1912' },
+];
 
 export default function App() {
+  const [pageLoading, setPageLoading] = React.useState(true);
+  const [isShowBottomSheet, setIsShowBottomSheet] = React.useState(false);
+
+  React.useEffect(() => {
+    setTimeout(() => {
+      setPageLoading(false);
+    }, 1000);
+  }, []);
+
+  const onButtonPress = () => {
+    setIsShowBottomSheet(true);
+  };
+
+  const handleClosePress = () => {
+    setIsShowBottomSheet(false);
+  };
+
   return (
-    <View style={styles.container}>
-      <DolphinUiView color="#32a852" style={styles.box} />
-    </View>
+    <Container>
+      <Loading isShow={pageLoading} />
+      <View style={styles.container}>
+        <Panel title="Example form title">
+          <Input label="Name" />
+          <Input label="Surname" />
+          <Input label="Password" secureTextEntry />
+          <Select title="Choose your favorite team" options={options} />
+          <Select
+            title="Choose your favorite team (canDelete)"
+            options={options}
+            canDelete
+          />
+          <Button title="Button" onPress={onButtonPress} />
+        </Panel>
+      </View>
+      <BottomSheet
+        title="Alert"
+        description="Are you sure?"
+        isShow={isShowBottomSheet}
+        handleClosePress={handleClosePress}
+      />
+    </Container>
   );
 }
 

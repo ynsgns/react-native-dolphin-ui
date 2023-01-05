@@ -1,26 +1,24 @@
-import {
-  requireNativeComponent,
-  UIManager,
-  Platform,
-  ViewStyle,
-} from 'react-native';
+import Input from './components/input';
 
-const LINKING_ERROR =
-  `The package 'react-native-dolphin-ui' doesn't seem to be linked. Make sure: \n\n` +
-  Platform.select({ ios: "- You have run 'pod install'\n", default: '' }) +
-  '- You rebuilt the app after installing the package\n' +
-  '- You are not using Expo Go\n';
+import Container from './components/container';
+import Label from './components/label';
+import Loading from './components/loading';
+import Panel from './components/panel';
+import Select from './components/select';
+import BottomSheet from './components/bottomsheet';
+import RadioGroup from './components/radiogroup';
+import CommentView from './components/comment';
+import Button from './components/button';
 
-type DolphinUiProps = {
-  color: string;
-  style: ViewStyle;
+export {
+  Input,
+  Select,
+  Button,
+  Container,
+  Label,
+  Panel,
+  Loading,
+  BottomSheet,
+  RadioGroup,
+  CommentView,
 };
-
-const ComponentName = 'DolphinUiView';
-
-export const DolphinUiView =
-  UIManager.getViewManagerConfig(ComponentName) != null
-    ? requireNativeComponent<DolphinUiProps>(ComponentName)
-    : () => {
-        throw new Error(LINKING_ERROR);
-      };
