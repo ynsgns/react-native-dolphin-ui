@@ -11,11 +11,41 @@ npm install react-native-dolphin-ui
 ## Usage
 
 ```js
-import { DolphinUiView } from "react-native-dolphin-ui";
+import {
+  Button,
+  Container,
+  Input,
+  Loading,
+  Panel,
+  Select,
+  BottomSheet,
+} from 'react-native-dolphin-ui';
 
 // ...
 
-<DolphinUiView color="tomato" />
+<Container>
+  <Loading isShow={pageLoading} />
+  <View style={styles.container}>
+    <Panel title="Example form title">
+      <Input label="Name" />
+      <Input label="Surname" />
+      <Input label="Password" secureTextEntry />
+      <Select title="Choose your favorite team" options={options} />
+      <Select
+        title="Choose your favorite team (canDelete)"
+        options={options}
+        canDelete
+      />
+      <Button title="Button" onPress={onButtonPress} />
+    </Panel>
+  </View>
+  <BottomSheet
+    title="Alert"
+    description="Are you sure?"
+    isShow={isShowBottomSheet}
+    handleClosePress={handleClosePress}
+  />
+</Container>;
 ```
 
 ## Contributing
