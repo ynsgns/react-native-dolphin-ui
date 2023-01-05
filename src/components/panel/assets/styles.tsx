@@ -13,6 +13,10 @@ const styles = StyleSheet.create({
   labe_style: {
     marginBottom: numbers.padding.s,
   },
+  container: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
 });
 
 export default styles;

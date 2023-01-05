@@ -11,7 +11,7 @@ function Panel({ children, rightComp, onPress, style, title = '' }: FormProps) {
       onPress={onPress}
       style={[styles.panel, style || {}]}
     >
-      <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+      <View style={styles.container}>
         {title && <Label title={title} large bold style={styles.labe_style} />}
         {rightComp && rightComp}
       </View>
