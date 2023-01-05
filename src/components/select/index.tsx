@@ -11,7 +11,7 @@ import { colors, images } from '../../assets';
 import BottomSheet from '../bottomsheet';
 import Label from '../label';
 import styles from './assets/styles';
-import RenderItem from './lib/renderItem';
+import RenderItem from './comp/renderItem';
 import type { SelectOptionsType, SelectPropsType } from './assets/types';
 
 const emptySelectValue: SelectOptionsType = { value: '', label: '' };
