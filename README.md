@@ -7,6 +7,11 @@ React Native UI Kit
 ```sh
 npm install react-native-dolphin-ui
 ```
+or
+```sh
+yarn add react-native-dolphin-ui
+```
+
 
 ## Usage
 
